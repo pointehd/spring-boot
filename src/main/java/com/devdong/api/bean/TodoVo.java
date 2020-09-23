@@ -11,20 +11,23 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name="todo")
 public class TodoVo {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int seq;
 	private String content;
 	private boolean isDone;
 	private boolean deleted;
-	private Timestamp create_dt;
+	private Timestamp creatDt;
 	
 	@Builder
 	public TodoVo(String content) {
