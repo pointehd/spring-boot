@@ -30,13 +30,13 @@ public class HomeController {
 	}
 	
 	@PutMapping(value = "/update")
-	public String updateTodo(@RequestBody TodoVo todo){
+	public TodoVo updateTodo(@RequestBody TodoVo todo){
 		System.out.println("dsldfa");
 		log.debug("todo.seq : {}", todo.getSeq());
 		log.debug("todo.seq : {}", todo.getContent());
 		log.debug("todo : {}", todo);
 		
-		return "ss";
+		return todoService.updateTodo(todo);
 //		return todoService.updateTodo(todo);
 	}
 }
