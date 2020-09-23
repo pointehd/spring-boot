@@ -17,5 +17,11 @@ public class TodoService {
 		return todo;
 	}
 	
+	public TodoVo updateTodo(TodoVo todo) {
+		TodoVo resultTodo = todoRepository.findById(todo.getSeq());
+		resultTodo.setContent(todo.getContent());
+		return resultTodo;
+	}
+	
 	
 }
