@@ -9,6 +9,11 @@ import com.devdong.api.bean.TodoVo;
 @Repository
 public interface TodoRepository extends JpaRepository<TodoVo, Integer>{
 	
+	static final int PAGE_VIEWER = 10;
+	
 	public TodoVo findById(int seq);
+	
+	public TodoVo findByIAndIsDone(int seq);
+	
 	
 }
