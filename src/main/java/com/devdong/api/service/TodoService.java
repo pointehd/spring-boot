@@ -12,11 +12,14 @@ import com.devdong.api.repository.TodoRepository;
 
 @Service
 public class TodoService {
+	
+	static final int PAGE_VIEWER = 10;
+	
 	@Autowired
 	private TodoRepository todoRepository;
 	
 	public List<TodoVo> getTodoPage(int page){
-		List<TodoVo> list = todoRepository.findAll(PageRequest.of(page, TodoRepository.PAGE_VIEWER)).getContent();
+		List<TodoVo> list = todoRepository.findAll(PageRequest.of(page, PAGE_VIEWER)).getContent();
 		return list;
 	}
 	
@@ -42,10 +45,11 @@ public class TodoService {
 	}
 	
 	public TodoVo deleteTodo(int seq) {
-		TodoVo resultTodo = todoRepository.findByIAndIsDone(seq);
-		resultTodo.setDeleted(true);
-		todoRepository.save(resultTodo);
-		return resultTodo;
+////		TodoVo resultTodo = todoRepository.findByIAndIsDone(seq, true);
+//		resultTodo.setDeleted(true);
+//		todoRepository.save(resultTodo);
+//		return resultTodo;
+		return null;
 	}
 	
 	

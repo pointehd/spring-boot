@@ -3,6 +3,7 @@ package com.devdong.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,8 +44,8 @@ public class TodoController {
 	 * 삽입 
 	 * */
 	@PostMapping("/todo")
-	public TodoVo insertTodo(@RequestBody String content) {
-		return todoService.insertTodo(content);
+	public TodoVo insertTodo(@RequestBody TodoVo todo) {
+		return todoService.insertTodo(todo.getContent());
 	}
 	
 	/**
@@ -71,6 +72,7 @@ public class TodoController {
 	/**
 	 * 삭제 처리 
 	 * */
+	@DeleteMapping("/todo")
 	public TodoVo deleteTodo(@RequestBody TodoVo todo) {
 		return todoService.deleteTodo(todo.getSeq());
 	}
