@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +29,8 @@ public class TodoVo {
 	private String content;
 	private boolean done;
 	private boolean deleted;
+	
+	@CreationTimestamp
 	private Timestamp createDt;
 	
 	@Builder

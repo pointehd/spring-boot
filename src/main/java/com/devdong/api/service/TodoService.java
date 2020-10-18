@@ -19,7 +19,7 @@ public class TodoService {
 	private TodoRepository todoRepository;
 	
 	public List<TodoVo> getTodoPage(int page){
-		List<TodoVo> list = todoRepository.findAll(PageRequest.of(page, PAGE_VIEWER)).getContent();
+		List<TodoVo> list = todoRepository.findByDeleted(false,PageRequest.of(page-1, PAGE_VIEWER));
 		return list;
 	}
 	
@@ -45,11 +45,10 @@ public class TodoService {
 	}
 	
 	public TodoVo deleteTodo(int seq) {
-////		TodoVo resultTodo = todoRepository.findByIAndIsDone(seq, true);
-//		resultTodo.setDeleted(true);
-//		todoRepository.save(resultTodo);
-//		return resultTodo;
-		return null;
+		TodoVo resultTodo = todoRepository.findById(seq);
+		resultTodo.setDeleted(true);
+		todoRepository.save(resultTodo);
+		return resultTodo;
 	}
 	
 	

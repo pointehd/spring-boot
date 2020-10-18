@@ -35,7 +35,7 @@ public class TodoController {
 	/**
 	 * 조회
 	 * */
-	@GetMapping("/todo/{page}")
+	@GetMapping("/todo/page/{page}")
 	public List<TodoVo> getTodo(@PathVariable int page){
 		return todoService.getTodoPage(page);
 	}
@@ -53,11 +53,6 @@ public class TodoController {
 	 * */
 	@PutMapping(value = "/todo")
 	public TodoVo updateTodo(@RequestBody TodoVo todo){
-		System.out.println("dsldfa");
-		log.debug("todo.seq : {}", todo.getSeq());
-		log.debug("todo.seq : {}", todo.getContent());
-		log.debug("todo : {}", todo);
-		
 		return todoService.updateTodo(todo);
 	}
 	
