@@ -1,0 +1,37 @@
+logging:
+  level:
+    com:
+      god:
+        bo:
+          test:
+            controller: debug
+    root: debug
+server:
+  port: 8888
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: rootpassword
+    url: jdbc:mysql://127.0.0.1:3306/todo?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+  devtools:
+    livereload:
+      enabled: true
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: 'true '
+        show_sql: 'true '
+        use_sql_comments: true
+    show-sql: true
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
