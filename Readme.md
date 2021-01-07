@@ -5,6 +5,7 @@
 [Api 문서](https://documenter.getpostman.com/view/9478063/TVKEWx4p#ca69e69b-f77a-4ad9-8340-1f9726d77f5b)
 
 ## 개발일기
+*  21.01.07 : bean name change
 *  20.11.29 : 다시 시작! 
 *  20.11.14 : 코딩권테기? propertis to yml 
 *  20.10.25 : 주간목표 properties to yaml 

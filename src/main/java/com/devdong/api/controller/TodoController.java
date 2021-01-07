@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devdong.api.bean.TodoVo;
+import com.devdong.api.bean.Todo;
 import com.devdong.api.service.TodoService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,7 @@ public class TodoController {
 	 * 조회
 	 * */
 	@GetMapping("/todo/page/{page}")
-	public List<TodoVo> getTodo(@PathVariable int page){
+	public List<Todo> getTodo(@PathVariable int page){
 		return todoService.getTodoPage(page);
 	}
 	
@@ -44,7 +44,7 @@ public class TodoController {
 	 * 삽입 
 	 * */
 	@PostMapping("/todo")
-	public TodoVo insertTodo(@RequestBody TodoVo todo) {
+	public Todo insertTodo(@RequestBody Todo todo) {
 		return todoService.insertTodo(todo.getContent());
 	}
 	
@@ -52,7 +52,7 @@ public class TodoController {
 	 * 내용 변경 
 	 * */
 	@PutMapping(value = "/todo")
-	public TodoVo updateTodo(@RequestBody TodoVo todo){
+	public Todo updateTodo(@RequestBody Todo todo){
 		return todoService.updateTodo(todo);
 	}
 	
@@ -60,7 +60,7 @@ public class TodoController {
 	 * 완료처리 
 	 * */
 	@PutMapping(value= "/todo/done")
-	public TodoVo doneTodo(@RequestBody TodoVo todo) {
+	public Todo doneTodo(@RequestBody Todo todo) {
 		return todoService.doneTodo(todo.getSeq());
 	}
 	
@@ -68,7 +68,7 @@ public class TodoController {
 	 * 삭제 처리 
 	 * */
 	@DeleteMapping("/todo")
-	public TodoVo deleteTodo(@RequestBody TodoVo todo) {
+	public Todo deleteTodo(@RequestBody Todo todo) {
 		return todoService.deleteTodo(todo.getSeq());
 	}
 	

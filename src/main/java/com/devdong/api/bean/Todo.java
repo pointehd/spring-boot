@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity 
 @Table(name="todo")
-public class TodoVo {
+public class Todo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class TodoVo {
 	private Timestamp createDt;
 	
 	@Builder
-	public TodoVo(String content) {
+	public Todo(String content) {
 		this.content = content;
 		this.done = false;
 		this.deleted = false;
