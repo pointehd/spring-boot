@@ -21,10 +21,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
@@ -84,22 +80,7 @@
 		<!-- logger -->
 		<dependency>
 		    <groupId>ch.qos.logback</groupId>
-		    <artifactId>logback-classic</artifactId>
-		    <exclusions>
-		        <exclusion>
-		            <groupId>org.slf4j</groupId>
-		            <artifactId>slf4j-api</artifactId>
-		        </exclusion>
-		    </exclusions>
-		    <scope>compile</scope>
-		</dependency>
-		<dependency>
-		    <groupId>ch.qos.logback</groupId>
 		    <artifactId>logback-core</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-api</artifactId>
 		</dependency>
 		
 	</dependencies>
